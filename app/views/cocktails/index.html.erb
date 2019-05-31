@@ -1,17 +1,21 @@
-<h1>Cocktails</h1>
 
-<ul>
+<div class="d-flex">
   <% @cocktails.each do |cocktail| %>
-    <li>
-       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag cocktail.photo, :height=>150, :width=>300, :crop=>"fill", class: 'card-img-top' %>
-        <!-- <img src="http://lorempixel.com/400/200/" class="card-img-top" alt="..."> -->
+       <div class="card m-3" style="width: 18rem;">
+        <% if cocktail.photo.filename.nil? %>
+          <img src="http://lorempixel.com/300/150/" class="card-img-top" alt="...">
+        <% else %>
+          <%= cl_image_tag cocktail.photo, :height=>145, :width=>300, :crop=>"fill", class: 'card-img-top' %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <%= link_to 'Details', cocktail_path(cocktail.id) %>
         </div>
       </div>
-    </li>
   <% end %>
-  <%= link_to 'Create', new_cocktail_path %>
-</ul>
+</div>
+<%= link_to 'Create', new_cocktail_path, class: 'btn btn-success' %>
+
+
+
+

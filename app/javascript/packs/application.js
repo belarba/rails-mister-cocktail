@@ -16,7 +16,7 @@
 // const imagePath = (name) => images(name, true)
 console.log('aaaaa')
 
-import improveDropdown from '../components/init_select2';
+// import improveDropdown from '../components/init_select2';
 
-improveDropdown();
+// improveDropdown();
 console.log('Hello World from Webpacker')
