@@ -32,7 +32,11 @@ module.exports = function(api) {
           useBuiltIns: 'entry',
           corejs: 3,
           modules: false,
-          exclude: ['transform-typeof-symbol']
+          exclude: ['transform-typeof-symbol'],
+          include: [
+             path.resolve(__dirname, "src"),
+             path.resolve(__dirname, "node_modules/ui")
+           ]
         }
       ]
     ].filter(Boolean),
