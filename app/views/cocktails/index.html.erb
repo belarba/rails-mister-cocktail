@@ -4,6 +4,7 @@
 </div>
 <div class="d-flex flex-wrap justify-content-around">
   <% @cocktails.each do |cocktail| %>
+    <div class="view overlay zoom">
        <div class="card shadow-sm m-3 rounded-circle overflow-hidden" style="width: 18rem;">
         <% if cocktail.photo.filename.nil? %>
           <img src="http://lorempixel.com/300/150/" class="card-img-top" alt="generic image">
@@ -15,6 +16,7 @@
           <%= link_to 'Details', cocktail_path(cocktail.id) %>
         </div>
       </div>
+    </div>
   <% end %>
 </div>
 
