@@ -1,20 +1,23 @@
 
-<div class="d-flex flex-wrap">
+<div class="text-center">
+  <%= link_to 'Create new drink', new_cocktail_path, class: 'btn btn-success' %>
+</div>
+<div class="d-flex flex-wrap justify-content-around">
   <% @cocktails.each do |cocktail| %>
-       <div class="card shadow-sm m-3" style="width: 18rem;">
+       <div class="card shadow-sm m-3 rounded-circle overflow-hidden" style="width: 18rem;">
         <% if cocktail.photo.filename.nil? %>
-          <img src="http://lorempixel.com/300/150/" class="card-img-top" alt="...">
+          <img src="http://lorempixel.com/300/150/" class="card-img-top" alt="generic image">
         <% else %>
           <%= cl_image_tag cocktail.photo, :height=>145, :width=>300, :crop=>"fill", class: 'card-img-top' %>
         <% end %>
-        <div class="card-body">
+        <div class="card-body text-center">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <%= link_to 'Details', cocktail_path(cocktail.id) %>
         </div>
       </div>
   <% end %>
 </div>
-<%= link_to 'Create', new_cocktail_path, class: 'btn btn-success' %>
+
 
 
 

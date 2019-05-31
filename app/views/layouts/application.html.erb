@@ -19,9 +19,11 @@
     <div class="home-banner">
       <h1>Belarba's Bar</h1>
     </div>
-    <div class="col-12 col-md-10 offset-md-1 mt-3">
-      <%= yield %>
-     </div>
+    <div class="container">
+      <div class="col-12 mt-3">
+        <%= yield %>
+       </div>
+    </div>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
