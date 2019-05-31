@@ -1,7 +1,7 @@
 
 <div class="d-flex flex-wrap">
   <% @cocktails.each do |cocktail| %>
-       <div class="card m-3" style="width: 18rem;">
+       <div class="card shadow-sm m-3" style="width: 18rem;">
         <% if cocktail.photo.filename.nil? %>
           <img src="http://lorempixel.com/300/150/" class="card-img-top" alt="...">
         <% else %>
