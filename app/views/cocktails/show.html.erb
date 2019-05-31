@@ -12,6 +12,9 @@
       <%= dose.description %>
       <%= dose.ingredient.name %>
     </li>
+    <%= link_to 'Delete ingredient', dose_path(dose.id), method: :delete %>
   <% end %>
 </ul>
+
 <%= link_to 'Back', cocktails_path%>
+<%= link_to 'Delete Cocktail', cocktail_path(@cocktail.id), method: :delete %>
